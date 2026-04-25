@@ -26,6 +26,7 @@ const Services = () => {
             description: 'We help you build strong and engaging Websites and Mobile apps.',
             icon: assets.code
         },
+        
     ]
     return (
         <div id='services' className='relative flex flex-col items-center gap-7 px-4 sm:px-12 lg_px-24 xl:px-40 pt-30 text-gray-700 dark:text-white'>
@@ -33,7 +34,7 @@ const Services = () => {
 
             <Title title="How can we help?" desc="From strategy to execution, we darft digital solutions that move your business forward." />
 
-            <div className='flex flex-col md:grid grid-cols-2'>
+            <div className='flex flex-col md:grid grid-cols-2 justify-center items-center'>
                 {servicesData.map((service, index) => (
                     <ServiceCard service={service} key={index}/>
                 ))}
