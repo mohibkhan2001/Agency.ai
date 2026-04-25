@@ -2,6 +2,7 @@ import React from 'react'
 import assets from '../assets/assets'
 import Title from './Title'
 import ServiceCard from './ServiceCard'
+import { motion } from "motion/react"
 
 const Services = () => {
 
@@ -26,20 +27,25 @@ const Services = () => {
             description: 'We help you build strong and engaging Websites and Mobile apps.',
             icon: assets.code
         },
-        
+
     ]
     return (
-        <div id='services' className='relative flex flex-col items-center gap-7 px-4 sm:px-12 lg_px-24 xl:px-40 pt-30 text-gray-700 dark:text-white'>
+        <motion.div
+            initial="hidden"
+            whileInView="visible"
+            transition={{ staggerChildren: 0.2 }}
+            viewport={{ once: true }}
+            id='services' className='relative flex flex-col items-center gap-7 px-4 sm:px-12 lg_px-24 xl:px-40 pt-30 text-gray-700 dark:text-white'>
             <img src={assets.bgImage2} className='absolute -top-110 -left-70 -z-1 dark:hidden' />
 
             <Title title="How can we help?" desc="From strategy to execution, we darft digital solutions that move your business forward." />
 
             <div className='flex flex-col md:grid grid-cols-2 justify-center items-center'>
                 {servicesData.map((service, index) => (
-                    <ServiceCard service={service} key={index}/>
+                    <ServiceCard service={service} key={index} />
                 ))}
             </div>
-        </div>
+        </motion.div>
     )
 }
 
